@@ -220,9 +220,8 @@ bkcore.hexgl.Gameplay.prototype.update = function()
 		var seconds = Math.round(((this.finishTime / 1000) % 60 + Number.EPSILON) * 1000) / 1000;
 		var minutes = Math.floor(this.finishTime / (1000*60)%60);
 		this.finishTimeFormatted = minutes+":"+seconds;
-		console.log(this.finishTimeFormatted) //DELETE LINE WHEN FINISHED
-
-		window.parent.document.dispatchEvent(new CustomEvent ('finishedGame', {detail : this.finishTimeFormatted}));
+		var returnValue = this.finishTimeFormatted+"|"+this.result
+		window.parent.document.dispatchEvent(new CustomEvent ('finishedGame', {detail : returnValue}));
 
 	}
 }
