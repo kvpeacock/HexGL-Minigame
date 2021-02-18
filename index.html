@@ -2,7 +2,7 @@
 <html data-init="no-js">
 <head>
 <meta charset="UTF-8" />
-<title>Sugarcube HTML5 Demonstration</title>
+<title>Sugarcube HTML5 Game</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <!--
 
@@ -98,17 +98,20 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Sugarcube HTML5 Game" startnode="1" creator="Twine" creator-version="2.3.12" ifid="5C41DAF6-B16E-46D9-9D4D-F28B4FA9394A" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Landing Page" tags="" position="473,279" size="100,100">This serves as a demonstration of inputting and outputting variables to and from a HTML5 game in sugarcube.
+	<tw-storydata name="Sugarcube HTML5 Game" startnode="1" creator="Twine" creator-version="2.3.12" ifid="5C41DAF6-B16E-46D9-9D4D-F28B4FA9394A" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar{
+  display: none;
+}
 
-[[Continue|Quiz Passage 1]]
+#story{
+  margin-left:5em;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Landing Page" tags="" position="473,279" size="100,100">This serves as a demonstration of inputting and outputting variables to and from a HTML5 game in sugarcube.
 
-
-</tw-passagedata><tw-passagedata pid="2" name="HexGL" tags="" position="1392,422" size="100,100">&lt;&lt;set $minigameReturnValue = 0&gt;&gt;
+[[Continue|Quiz Passage 1]]</tw-passagedata><tw-passagedata pid="2" name="HexGL" tags="" position="1392,422" size="100,100">&lt;&lt;set $minigameReturnValue = 0&gt;&gt;
 &lt;&lt;set $minigameReturnArray = 0&gt;&gt;
 
 &lt;&lt;set $gameURL to &quot;HexGL/index.html?shieldCount=&quot; +$shields&gt;&gt;
 
-&lt;iframe id=&quot;HexGL&quot; @src=$gameURL width=&quot;1080&quot; height=&quot;720&quot;&gt;
+&lt;iframe id=&quot;HexGL&quot; @src=$gameURL width=&quot;720p&quot; height=&quot;480p&quot;&gt;
 &lt;/iframe&gt;
 
 &lt;&lt;script&gt;&gt;
@@ -118,7 +121,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		Engine.play(&quot;Finished Game&quot;)
 		}
 	window.document.addEventListener(&quot;finishedGame&quot;, handleEvent, false);
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Finished Game" tags="" position="1254,527" size="100,100">&lt;&lt;set $finishTime = $minigameReturnArray[0]&gt;&gt;
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Finished Game" tags="" position="1567,419" size="100,100">&lt;&lt;set $finishTime = $minigameReturnArray[0]&gt;&gt;
 
 Your time was $finishTime.
 
@@ -151,7 +154,7 @@ Unfortunately you allowed ZZ to keep their shield management software proprietar
 &lt;&lt;endif&gt;&gt;\
  
 &lt;&lt;if $choice2==&quot;deleteinterface&quot;&gt;&gt;\
-Unfortunately because you didn’t require delivery of the interface specification of how the product is connected to the main engine, engine tuning and performance adjustments need to be performed by the supplier. Their call out times are very slow and since they haven’t turned up, the shield&#39;s strength is reduced by 75&amp;.
+Unfortunately because you didn’t require delivery of the interface specification of how the product is connected to the main engine, engine tuning and performance adjustments need to be performed by the supplier. Their call out times are very slow and since they haven’t turned up, the shield&#39;s strength is reduced by 75%.
 &lt;&lt;endif&gt;&gt;\
 
 &lt;&lt;if $shields lt 5&gt;&gt;\
