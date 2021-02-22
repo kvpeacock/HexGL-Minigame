@@ -10,6 +10,7 @@ bkcore.hexgl = bkcore.hexgl || {};
 
 bkcore.hexgl.ShipControls = function(ctx)
 {
+	/*
 	function getParameterByName(name, url = window.location.href) {
 		name = name.replace(/[\[\]]/g, '\\$&');
 		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -18,7 +19,7 @@ bkcore.hexgl.ShipControls = function(ctx)
 		if (!results[2]) return '';
 		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 	}
-	
+	*/
 	var self = this;
 	var domElement = ctx.document;
 
@@ -45,7 +46,7 @@ bkcore.hexgl.ShipControls = function(ctx)
 	this.repulsionLerp = 0.1;
 	this.collisionSpeedDecrease = 0.8;
 	this.collisionSpeedDecreaseCoef = 0.8;
-	this.maxShield = getParameterByName("shieldCount");
+	this.maxShield = 1.0; //getParameterByName("shieldCount");
 	this.shieldDelay = 60;
 	this.shieldTiming = 0;
 	this.shieldDamage = 0.25;
