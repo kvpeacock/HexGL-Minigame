@@ -215,14 +215,38 @@ bkcore.hexgl.Gameplay.prototype.update = function()
 		//ONCE RACE IS COMPLETED
 		this.active = false;
 		this.onFinish.call(this);
-		console.log(this.finishTime);
-
+		if (this.result == 1){
+			if(this.finishTime < 75000){
+				this.trophy = "Platinum Trophy";
+				this.finishedScore = 750;
+			} 
+			else if(this.finishTime < 80000){
+				this.trophy = "Gold Trophy";
+				this.finishedScore = 500;
+			}
+			else if(this.finishTime < 90000){
+				this.trophy = "Silver Trophy";
+				this.finishedScore = 250;
+			}
+			else if (this.finishTime < 10500) {
+				this.trophy = "Bronze Trophy";
+				this.finishedScore = 100;
+			}
+			else {
+				this.trophy = "Disqualified";
+				this.finishedScore = 0;
+			}
+		}		
+		else {
+			this.trophy = "Disqualified";
+			this.finishedScore = 0;
+		}
 		var seconds = Math.round(((this.finishTime / 1000) % 60 + Number.EPSILON) * 1000) / 1000;
 		var minutes = Math.floor(this.finishTime / (1000*60)%60);
-		this.finishTimeFormatted = minutes+":"+seconds;
-		var returnValue = this.finishTimeFormatted+"|"+this.result
+		this.finishTimeFormatted = minutes+"'"+seconds;
+		var returnValue = this.finishTimeFormatted+"|"+this.trophy+"|"+this.finishedScore+"|"+this.result;
+		console.log(returnValue);
 		window.parent.document.dispatchEvent(new CustomEvent ('finishedGame', {detail : returnValue}));
-
 	}
 }
 
