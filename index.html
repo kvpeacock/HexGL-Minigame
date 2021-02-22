@@ -124,8 +124,12 @@ Have fun, and aim for the top score!
 [[Continue|Quiz Passage 1]]</tw-passagedata><tw-passagedata pid="2" name="HexGL" tags="" position="887,403" size="100,100">&lt;&lt;set $minigameReturnValue = 0&gt;&gt;
 &lt;&lt;set $minigameReturnArray = 0&gt;&gt;
 &lt;&lt;set $gameURL to &quot;HexGL/index.html?shieldCount=&quot; +$shields&gt;&gt;
+&lt;&lt;set $shieldsPercent = parseFloat($shields)*100&gt;&gt;
 &lt;iframe id=&quot;HexGL&quot; @src=$gameURL width=&quot;720p&quot; height=&quot;480p&quot;&gt;
 &lt;/iframe&gt;
+
+Your shields are running at $shieldsPercent% efficiency.
+Shields are represented by the grey bar, and the smaller number below your current speed.
 
 Target Times:
 1&#39;15.000 : Platinum Trophy
