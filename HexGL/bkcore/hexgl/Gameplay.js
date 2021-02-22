@@ -220,15 +220,15 @@ bkcore.hexgl.Gameplay.prototype.update = function()
 				this.trophy = "Platinum Trophy";
 				this.finishedScore = 750;
 			} 
-			else if(this.finishTime < 80000){
+			else if(this.finishTime < 90000){
 				this.trophy = "Gold Trophy";
 				this.finishedScore = 500;
 			}
-			else if(this.finishTime < 90000){
+			else if(this.finishTime < 105000){
 				this.trophy = "Silver Trophy";
 				this.finishedScore = 250;
 			}
-			else if (this.finishTime < 10500) {
+			else if (this.finishTime < 150000) {
 				this.trophy = "Bronze Trophy";
 				this.finishedScore = 100;
 			}
